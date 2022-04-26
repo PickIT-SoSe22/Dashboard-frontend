@@ -1,6 +1,7 @@
 import React from 'react'
 import { AiOutlineHome, AiOutlineSetting } from 'react-icons/ai';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function Sidebar({ sidebarWidth }) {
     const router = useRouter()
@@ -9,14 +10,14 @@ export default function Sidebar({ sidebarWidth }) {
             <div className="sidebar">
                 <nav className="icons">
                     <div className={router.pathname === '/' ? 'act' : 'notAct'}>
-                        <a href="/">
+                        <Link href="/">
                             <AiOutlineHome size='2em' color={router.pathname === '/' ? '#ffffff' : '#6272A4'} />
-                        </a>
+                        </Link>
                     </div>
                     <div className={router.pathname === '/settings' ? 'act' : 'notAct'}>
-                        <a href="/settings">
+                        <Link href="/settings">
                             <AiOutlineSetting size='2em' color={router.pathname === '/settings' ? '#ffffff' : '#6272A4'} />
-                        </a>
+                        </Link>
                     </div>
                 </nav>
             </div>
@@ -28,6 +29,7 @@ export default function Sidebar({ sidebarWidth }) {
                     bottom: 0;
                     left: 0;
                     background-color: #343746;
+                    cursor: pointer;
                 }
 
                 .act {
@@ -38,6 +40,7 @@ export default function Sidebar({ sidebarWidth }) {
                     align-items: center;
                     justify-content: center;
                     border-left: 1px solid #ff79c6;
+                    cursor: pointer;
                 }
 
                 .notAct {
