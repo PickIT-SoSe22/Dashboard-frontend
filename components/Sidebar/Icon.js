@@ -34,7 +34,7 @@ export default function Icon({ icon, href, tooltip }) {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    border-left: 1px solid #ff79c6;
+                    border-left: 1px solid #8aff80;
                     cursor: pointer;
                 }
 

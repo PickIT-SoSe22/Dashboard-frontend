@@ -8,7 +8,9 @@ export default function DeviceSettings({ setshowSettings }) {
 
                 <div className="box">
                     LED-Ring Einstellungen
-                    <TextField label="MQTT Topic" variant="standard" />
+                    <TextField label="MQTT Topic" variant="standard" InputLabelProps={{
+                        style: { color: '#fff' },
+                    }} />
                     <div className="icon">
                         <AiOutlineCloseCircle onClick={() => setshowSettings(false)} />
                     </div>
