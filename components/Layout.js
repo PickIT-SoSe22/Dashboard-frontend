@@ -1,5 +1,5 @@
 import React from 'react'
-import Sidebar from './Sidebar'
+import Sidebar from './Sidebar/Sidebar'
 
 export default function Layout({ children }) {
     const sidebarWidth = 72
