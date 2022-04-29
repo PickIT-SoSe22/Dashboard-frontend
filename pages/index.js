@@ -1,8 +1,6 @@
-import { Button } from "@mui/material";
-import { useEffect, useState } from "react";
-import LightDevice from "../components/LightDevice";
-import mqtt from "mqtt";
+import Home from './home/Home.jsx'
 
+<<<<<<< Updated upstream
 export default function Home() {
   const [client, setClient] = useState(null);
 
@@ -52,4 +50,9 @@ export default function Home() {
 
     </div >
   )
+=======
+export default function index() {
+  // Hier routing?
+  return <Home />;
+>>>>>>> Stashed changes
 }
