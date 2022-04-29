@@ -4,7 +4,7 @@ import { RiLightbulbLine, RiLightbulbFlashLine } from 'react-icons/ri';
 import { AiOutlineSetting } from 'react-icons/ai';
 import DeviceSettings from './DeviceSettings';
 
-export default function LightDevice() {
+export default function LightDevice({ client }) {
     const [lightOn, setLightOn] = useState(false)
     const [showSettings, setshowSettings] = useState(false)
     return (

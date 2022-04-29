@@ -28,7 +28,7 @@ export default function Home() {
 
   const mqttPublish = async () => {
     console.log('pub', client);
-    if(client) {
+    if (client) {
       await client.publish("test/2", "hello pickit!");
     }
   };
@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <div>
       <h1>ESP-32 Dashboard</h1>
-      <LightDevice />
+      <LightDevice client={client} />
       <Button onClick={() => mqttConnect()}>Connect</Button>
       <Button onClick={() => mqttPublish()}>Test</Button>
 
