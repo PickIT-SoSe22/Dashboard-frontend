@@ -26,7 +26,7 @@ export default function LightDevice({ client }) {
                     }
                 </div>
             </div>
-            {/* linear-gradient(135deg,#ffff80 0%,#ff80bf 100%) */}
+
             <style jsx>{`
                 .device {
                     height: 200px;
