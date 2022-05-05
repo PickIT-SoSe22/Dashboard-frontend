@@ -1,7 +1,10 @@
 import { Button, TextField } from '@mui/material'
-import React from 'react'
+import React, { useContext } from 'react'
+import { MqttContext } from '../context/MqttContext'
 
 export default function Settings() {
+    const { server } = useContext(MqttContext)
+    const [mqttServer, setMqttServer] = server
     return (
         <div>
             <h1>Einstellungen</h1>
@@ -9,15 +12,10 @@ export default function Settings() {
                 <div>
                     <TextField label="MQTT Server" variant="standard" InputLabelProps={{
                         style: { color: '#fff' },
-                    }} />
-                </div>
-                <div>
-                    <TextField label="MQTT Port" variant="standard" InputLabelProps={{
-                        style: { color: '#fff' },
-                    }} />
-                </div>
-                <div>
-                    <Button>Speichern</Button>
+                    }}
+                        value={mqttServer}
+                        onChange={(e) => setMqttServer(e.target.value)}
+                    />
                 </div>
             </div>
             <style jsx>{`

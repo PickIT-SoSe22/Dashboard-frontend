@@ -1,6 +1,7 @@
 import mqtt from "mqtt";
 
-export function mqttConnect () {
+export function mqttConnect(server) {
+
     const options = {
         keepalive: 60,
         clientId: 'pick-it-dashboard',
@@ -16,13 +17,12 @@ export function mqttConnect () {
             retain: false
         }
     }
-    const uri = `ws://mqtt.castrumnubis.com:8083/mqtt`;
-
+    const uri = server;
     return mqtt.connect(uri, options);
 };
 
-export function mqttPublish (clientRef, topic, msg) {
-    if(clientRef) {
+export function mqttPublish(clientRef, topic, msg) {
+    if (clientRef) {
         return clientRef.publish(topic, msg);
     }
 };
