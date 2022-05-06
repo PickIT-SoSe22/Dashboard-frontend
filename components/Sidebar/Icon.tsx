@@ -14,8 +14,10 @@ export default function Icon({ icon, href, tooltip }) {
                 onMouseEnter={() => setShowTooltip(true)}
                 onMouseLeave={() => setShowTooltip(false)}>
 
-                <Link href={href}>
-                    <Icon size='2em' color={router.pathname === href ? '#ffffff' : '#6272A4'} />
+                <Link href={href} passHref>
+                    <a>
+                        <Icon size='2em' color={router.pathname === href ? '#ffffff' : '#6272A4'} />
+                    </a>
                 </Link>
 
                 {showTooltip &&
