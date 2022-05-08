@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import LightDevice from "../components/LightDevice";
+import ColorUpdater from "../components/ColorUpdater";
 import mqtt from "mqtt";
 
 export default function Home() {
@@ -46,11 +47,25 @@ export default function Home() {
   return (
     <div>
       <h1>ESP-32 Dashboard</h1>
-      <LightDevice />
-      <Button onClick={() => mqttConnect()}>Connect</Button>
-      <Button onClick={() => mqttPublish("test/2", "hello pickit!")}>
-        Test
-      </Button>
+      <div className="box">
+        <div>
+          <LightDevice />
+          <Button onClick={() => mqttConnect()}>Connect</Button>
+          <Button onClick={() => mqttPublish("test/2", "hello pickit!")}>
+            Test
+          </Button>
+        </div>
+        <div>
+          <ColorUpdater publish={mqttPublish} />
+        </div>
+      </div>
+
+      <style jsx>{`
+        .box {
+          display: flex;
+          gap: 50px;
+        }
+      `}</style>
     </div>
   );
 }
