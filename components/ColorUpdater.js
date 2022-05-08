@@ -8,12 +8,17 @@ export default function ColorUpdater({ publish }) {
 
   const handleChangeComplete = (color) => {
     setColor(color.rgb);
-    console.log(color.rgb);
   };
 
   const settingOption = (e) => {
     e.preventDefault();
     setOption("is being updated: " + e.target.innerText);
+
+    if (e.target.innerText === "update Color".toUpperCase()) {
+      publish("ColorChanger", JSON.stringify(color));
+    } else {
+      publish("ColorChanger", JSON.stringify({ option: e.target.innerText }));
+    }
   };
 
   return (
