@@ -7,8 +7,8 @@ export const MqttContext = createContext(null)
 
 export function MqttProvider({ children }) {
     const { mqttConnect } = useMqtt()
-    const [server, setServer] = useLocalStorage('server', 'ws://mqtt.castrumnubis.com:8083/mqtt')
-    const [client, setClient] = useState(() => mqttConnect('ws://mqtt.castrumnubis.com:8083/mqtt'))
+    const [server, setServer] = useLocalStorage('server', 'wss://mqtt.castrumnubis.com:8084/mqtt')
+    const [client, setClient] = useState(() => mqttConnect('wss://mqtt.castrumnubis.com:8084/mqtt'))
     const [topic, setTopic] = useLocalStorage('topic', 'esp32/ledring/power');
     return (
         <MqttContext.Provider value={{
